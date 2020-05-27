@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+
+
+{% block content%}
+
+
+
+<h1>{{ user.username}}</h1>
+
+    <div>
+        <img src="{{ user.profile.image.url}}">
+
+    </div>
+
+    <div>{{ user.username }}</div>
+    <div>{{ user.email}}</div>
+
+
+    <h3>Update Profile</h3>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ u_form }}
+    {{ p_form }}
+
+<div class="form-group">
+    <button type="submit">Update</button>
+</div>
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token%}
+    {% include 'form_template.html' %}
+
+    <button type="submit" class="btn btn-danger">Add Product</button>
+</form>
+
+{% endblock %}

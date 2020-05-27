@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Details</h1>
+
+
+<h1>This is the details for the {{ products.name }} </h1>
+
+<img src="{{ products.product_image.url }}">
+
+
+<p>BIO</p><h2>{{ products.bio }}</h2>
+<p>PRICE</p><h2>{{ products.price }}</h2>
+<p>SIZE</p><h2>{{ products.size }}</h2>
+
+<form action="{% url 'products:product_delete' products.id %}">
+    {% csrf_token %}
+    
+    <button type="submit">Delete</button>
+</form>
+
+<a href="{% url 'products:product_update' products.id %}">Update</a>
+{% endblock %}
+
